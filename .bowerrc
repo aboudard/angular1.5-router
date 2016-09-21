@@ -1,0 +1,7 @@
+{
+  "directory": "components",
+  "strict-ssl": false,
+  "proxy": "http://proxypar.orleanssrv.domsma:8090",
+  "https-proxy": "http://proxypar.orleanssrv.domsma:8090",
+  "timeout": 1000000
+}

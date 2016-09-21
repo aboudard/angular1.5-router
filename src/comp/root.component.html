@@ -1,0 +1,17 @@
+<div class="root" layout="column" ng-cloak>
+    
+    <header-component badge="rootCtrl.badge"></header-component>
+
+    <md-content class="md-padding" flex layout-padding>
+        <div class="ext-content">
+            <ui-view></ui-view>
+        </div>
+    </md-content>
+    
+    <footer>
+        <div layout="row" layout-align="center center">
+            <p>&copy; {{rootCtrl.yearNow}} <span> OXiane </span> / Version : {{rootCtrl.appVersion}}</p>
+        </div>
+    </footer>
+
+</div>
