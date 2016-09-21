@@ -27,7 +27,7 @@ angular.module('pmApp', [
         };
         var adminState = {
             name: 'admin',
-            url: '/',
+            url: '/admin',
             component: 'adminComponent'
         };
 

@@ -13,7 +13,7 @@ Each route is linked to a component, no controller configuration
 ```javascript
 var adminState = {
 	name: 'admin',
-	url: '/',
+	url: '/admin',
 	component: 'adminComponent'
 };
 $stateProvider.state(adminState);
