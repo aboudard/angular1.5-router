@@ -14,7 +14,8 @@ angular.module('pmApp', [
     'ngMaterial',
     'ngAnimate',
     'ngAria',
-    'ngMessages'
+    'ngMessages',
+    'pmApp.users'
 
 ])
 
@@ -46,4 +47,20 @@ angular.module('pmApp', [
             .accentPalette('orange')
             .warnPalette('blue');
         $mdThemingProvider.alwaysWatchTheme(true);
-    });
+    })
+    .run(['$location', 'users', '$transitions', '$log',
+    function ($location, users, $transitions, $log) {
+
+
+        function restrictRoute($transitions) {
+            // If the user is not authenticated
+            if (!users.isAdmin()) {
+                $log.debug("admin restricted");
+                $transitions.router.stateService.go("home")
+            } else {
+                $log.debug("admin ok");
+            }
+        }
+        $transitions.onStart( { to: 'admin' }, restrictRoute);
+
+    }]);

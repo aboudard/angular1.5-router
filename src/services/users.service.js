@@ -1,15 +1,28 @@
-angular.module('pmApp.users', []).
-factory('users', function($http) {
-  return {
-    getUser: getUser,
-    getFullName: getFullName
-  };
+function usersService($http) {
 
-  function getUser(id) {
-    return $http.get('/users/' + id);
-  }
+    var service = {};
+    service.user = {};
 
-  function getFullName(user) {
-    return user.firstName + " " + user.lastName;
-  }
-});
+    service.isAdmin = function() {
+        return false;
+    };
+    
+    service.getFullName = function(user) {
+        return user.firstName + " " + user.lastName;
+    }
+
+    service.getUser = function(id) {
+        return $http({
+            method: 'GET',
+            url: '/users/' + id
+        }).then(function(response) {
+            return response.data;
+        });
+    };
+
+    return service;
+}
+
+usersService.$inject = ['$http'];
+angular.module('pmApp.users', [])
+    .factory('users', usersService);
