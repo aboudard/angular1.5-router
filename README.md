@@ -18,3 +18,7 @@ var adminState = {
 };
 $stateProvider.state(adminState);
 ```
+
+## Run tests
+
+- gulp tests
