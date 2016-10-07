@@ -1,6 +1,3 @@
-/**
- * Created by A15285 on 20/07/2016.
- */
 function HomeController() {
 
     var vm = this;
