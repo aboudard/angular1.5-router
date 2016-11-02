@@ -1,4 +1,3 @@
-
 function AdminController() {
     var vm = this;
 
@@ -16,8 +15,8 @@ angular.module('pmApp.adminComponent', []).component('adminComponent', {
     templateUrl: 'src/admin/admin.component.html',
     controller: AdminController,
     controllerAs: "adminCtrl",
-    require: { parent : '^rootComponent' },
+    require: { parent: '^rootComponent' },
     bindings: {
-
+        userLabel: "="
     }
 });

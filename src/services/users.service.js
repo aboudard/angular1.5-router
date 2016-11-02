@@ -4,9 +4,9 @@ function usersService($http) {
     service.user = {};
 
     service.isAdmin = function() {
-        return false;
+        return true;
     };
-    
+
     service.getFullName = function(user) {
         return user.firstName + " " + user.lastName;
     }

@@ -16,7 +16,7 @@ angular.module('pmApp', [
 
 ])
 
-    .config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
         var homeState = {
             name: 'home',
@@ -26,7 +26,12 @@ angular.module('pmApp', [
         var adminState = {
             name: 'admin',
             url: '/admin',
-            component: 'adminComponent'
+            component: 'adminComponent',
+            resolve: {
+                userLabel: function() {
+                    return { value: "John" }
+                }
+            }
         };
 
         $stateProvider.state(homeState);
@@ -35,7 +40,7 @@ angular.module('pmApp', [
         // when there is an empty route, redirect to /index
         $urlRouterProvider.when('', '/');
     })
-    .config(function ($mdThemingProvider) {
+    .config(function($mdThemingProvider) {
         $mdThemingProvider.theme('indigo')
             .primaryPalette('indigo')
             .accentPalette('pink');
@@ -46,18 +51,19 @@ angular.module('pmApp', [
         $mdThemingProvider.alwaysWatchTheme(true);
     })
     .run(['$location', 'users', '$transitions', '$log',
-    function ($location, users, $transitions, $log) {
+        function($location, users, $transitions, $log) {
 
 
-        function restrictRoute($transitions) {
-            // If the user is not authenticated
-            if (!users.isAdmin()) {
-                $log.debug("admin restricted");
-                $transitions.router.stateService.go("home")
-            } else {
-                $log.debug("admin ok");
+            function restrictRoute($transitions) {
+                // If the user is not authenticated
+                if (!users.isAdmin()) {
+                    $log.debug("admin restricted");
+                    $transitions.router.stateService.go("home")
+                } else {
+                    $log.debug("admin ok");
+                }
             }
-        }
-        $transitions.onStart( { to: 'admin' }, restrictRoute);
+            $transitions.onStart({ to: 'admin' }, restrictRoute);
 
-    }]);
+        }
+    ]);
