@@ -1,7 +1,7 @@
-# angular1.5-router
-angular 1.5 app with components
+# angular 1.5+ router
+angular 1.5+ app with components
 
-This simple app demonstrates the use of beta ui-router with strict use of components from AngularJS 1.5
+This simple app demonstrates the use of beta ui-router with strict use of components from AngularJS 1.5 and above (1.6 as of now)
 This is much like Angular 2 router system
 Each route is linked to a component, no controller configuration
 
