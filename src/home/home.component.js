@@ -4,7 +4,7 @@ function HomeController() {
     vm.message = "Bonjour OXiane";
 
     function activate() {
-        
+
     }
 
     vm.$onInit = function() {
@@ -13,11 +13,13 @@ function HomeController() {
     console.log("home comp");
 }
 HomeController.$inject = [];
-angular.module('pmApp.homeComponent', []).component('homeComponent', {
+angular.module('pmApp.homeComponent', [
+    'pmApp.formulaireComponent'
+]).component('homeComponent', {
     templateUrl: 'src/home/home.component.html',
     controller: HomeController,
     controllerAs: "homeCtrl",
-    require: { parent : '^rootComponent' },
+    require: { parent: '^rootComponent' },
     bindings: {
 
     }
