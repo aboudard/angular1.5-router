@@ -2,7 +2,7 @@ function AdminController() {
     var vm = this;
 
     function activate() {
-
+        console.log("state param : " + vm.userLabel);
     }
 
     vm.$onInit = function() {
