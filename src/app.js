@@ -12,7 +12,8 @@ angular.module('pmApp', [
     'ngAnimate',
     'ngAria',
     'ngMessages',
-    'pmApp.users'
+    'pmApp.users',
+    'pmApp.greeter'
 
 ])
 
@@ -21,7 +22,12 @@ angular.module('pmApp', [
         var homeState = {
             name: 'home',
             url: '/',
-            component: 'homeComponent'
+            component: 'homeComponent',
+            resolve: {
+                hello: ['greeter', function(greeter) {
+                    return greeter.getHello();
+                }]
+            }
         };
         var adminState = {
             name: 'admin',
@@ -65,5 +71,15 @@ angular.module('pmApp', [
             }
             $transitions.onStart({ to: 'admin' }, restrictRoute);
 
+            /*
+            function restrictRouteRecouvrement(trans) {
+                var params = trans.params();
+                if (!params.numClient) {
+                    alert("L'accès à l'onglet XXX n'est pas possible sans un paramètre");
+                    return false;
+                }
+            }
+            $transitions.onStart({ to: 'recouvrement', from: 'client' }, restrictRouteRecouvrement);
+            */
         }
     ]);

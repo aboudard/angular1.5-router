@@ -4,6 +4,9 @@ angular.module('pmApp.greeter', [])
     // ...
     getGreeting: function(name) {
       return "Hello " + name;
+    },
+    getHello: function() {
+      return {value: "Application ng 1x"};
     }
   };
 });

@@ -4,7 +4,7 @@ function HomeController() {
     vm.message = "Bonjour OXiane";
 
     function activate() {
-
+        console.log(vm.hello);
     }
 
     vm.$onInit = function() {
@@ -21,6 +21,6 @@ angular.module('pmApp.homeComponent', [
     controllerAs: "homeCtrl",
     require: { parent: '^rootComponent' },
     bindings: {
-
+        hello: '<'
     }
 });
