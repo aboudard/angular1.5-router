@@ -5,8 +5,17 @@ This simple app demonstrates the use of beta ui-router with strict use of compon
 This is much like Angular 2 router system
 Each route is linked to a component, no controller configuration
 
-- run bower install
-- run with http-server
+- run "yarn install"
+- run "npm run server"
+
+## Yarn config
+
+Behind a proxy : create a .yarnrc fil in root folder :
+
+proxy "http://proxy.domain:XXXX"
+https-proxy "http://proxy.domain:XXXX"
+registry "https://registry.npmjs.org"
+strict-ssl false
 
 ## Define a route
 
