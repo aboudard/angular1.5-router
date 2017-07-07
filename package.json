@@ -1,12 +1,13 @@
 {
   "name": "test03",
   "version": "1.0.0",
-  "description": "",
+  "description": "ng 1.x component router",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server" : "live-server --port=9000 --browser=Chrome"
   },
-  "author": "",
+  "author": "coco.boudard@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -17,5 +18,19 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-spec-reporter": "0.0.26",
     "phantomjs": "^2.1.7"
+  },
+  "repository": "https://github.com/aboudard/angular1.5-router.git",
+  "dependencies": {
+    "angular": "^1.6.5",
+    "angular-animate": "^1.6.5",
+    "angular-aria": "^1.6.5",
+    "angular-loader": "^1.6.5",
+    "angular-material": "^1.1.4",
+    "angular-messages": "^1.6.5",
+    "angular-mocks": "^1.6.5",
+    "angular-route": "^1.6.5",
+    "angular-ui-router": "^1.0.3",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
   }
 }
