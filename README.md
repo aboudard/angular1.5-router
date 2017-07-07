@@ -12,10 +12,12 @@ Each route is linked to a component, no controller configuration
 
 Behind a proxy : create a .yarnrc fil in root folder :
 
+```
 proxy "http://proxy.domain:XXXX"
 https-proxy "http://proxy.domain:XXXX"
 registry "https://registry.npmjs.org"
 strict-ssl false
+```
 
 ## Define a route
 
