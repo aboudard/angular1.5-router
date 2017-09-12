@@ -14,7 +14,7 @@ function usersService($http) {
     service.getUser = function(id) {
         return $http({
             method: 'GET',
-            url: '/users/' + id
+            url: 'http://localhost:3000/users/' + id
         }).then(function(response) {
             return response.data;
         });

@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server" : "live-server --port=9000 --browser=Chrome"
+    "server": "live-server --port=9000 --browser=Chrome"
   },
   "author": "coco.boudard@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-json-srv": "^1.1.0",
     "gulp-load-plugins": "^1.3.0",
     "jasmine-core": "^2.5.2",
     "karma": "^1.3.0",
@@ -21,6 +22,7 @@
   },
   "repository": "https://github.com/aboudard/angular1.5-router.git",
   "dependencies": {
+    "@uirouter/angularjs": "^1.0.3",
     "angular": "^1.6.5",
     "angular-animate": "^1.6.5",
     "angular-aria": "^1.6.5",
@@ -29,7 +31,6 @@
     "angular-messages": "^1.6.5",
     "angular-mocks": "^1.6.5",
     "angular-route": "^1.6.5",
-    "angular-ui-router": "^1.0.3",
     "lodash": "^4.17.4",
     "moment": "^2.18.1"
   }
