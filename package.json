@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "gulp test",
+    "postinstall": "node node_modules/phantomjs-prebuilt/install.js",
     "server": "live-server --port=9000 --browser=Chrome"
   },
   "author": "coco.boudard@gmail.com",
